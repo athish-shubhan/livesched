@@ -1,0 +1,80 @@
+// Gym-style environment API for the LiveSched simulator.
+//
+// One Reset starts an episode (a synthetic week of one scenario); each Step
+// applies an action (HCDN's knobs for the next control interval), advances
+// the simulator by step_seconds and returns the observation and reward. The
+// final Close returns the episode's full metrics, including the true
+// 95th-percentile-billing cost that per-step rewards only approximate.
+syntax = "proto3";
+
+package livesched.env.v1;
+
+option go_package = "livesched/env/envpb";
+
+service Env {
+  rpc Reset(ResetRequest) returns (Observation);
+  rpc Step(StepRequest) returns (StepResult);
+  rpc Observe(EpisodeRef) returns (Observation);
+  rpc Close(EpisodeRef) returns (EpisodeMetrics);
+}
+
+message ResetRequest {
+  string scenario = 1;          // shows | matches | auctions
+  uint64 seed = 2;              // one seed = one synthetic week
+  double hours = 3;             // episode length (simulated)
+  int32 peak = 4;               // peak concurrent viewers
+  int32 step_seconds = 5;       // control interval
+  int32 substreams = 6;         // Medley K (1 = whole streams)
+  bool substream_aware = 7;
+  bool whole_auctions = 8;
+  string base_params_json = 9;  // HCDN parameters before the first action (defaults if empty)
+  double stall_penalty = 10;    // reward = -(interval cost / cost_scale) - stall_penalty * stall share
+  double cost_scale = 11;
+}
+
+// Action: the knobs a controller may change between steps. Fields left at
+// their zero value keep the current setting only if keep_unset is true.
+message Action {
+  double offload_util = 1;      // S4: offload hot streams to best-effort edges above this regional utilization
+  double be_max_util = 2;       // S4: never fill a best-effort edge past this
+  double hot_util = 3;          // S3
+  int32 cold_max = 4;           // S2
+  int32 frozen_max = 5;         // S1
+  bool frozen = 6;
+  bool cold = 7;
+  bool hot = 8;
+  bool offload = 9;
+  bool protect_lowlat = 10;
+  bool keep_unset = 11;
+}
+
+message StepRequest {
+  string episode = 1;
+  Action action = 2;
+}
+
+message EpisodeRef { string episode = 1; }
+
+message Observation {
+  string episode = 1;
+  int32 t = 2;                      // simulated seconds since the start
+  int32 horizon = 3;
+  double hour_of_day = 4;
+  repeated double regular_util = 5; // per region
+  repeated double best_effort_util = 6;
+  repeated double multihomed_util = 7;
+  double interval_cost_rate = 8;    // average-billing cost per second over the last step
+  double interval_stall_share = 9;  // stalled share of watch time over the last step
+  int64 viewers = 10;
+  double auction_g2g_p95_ms = 11;   // auction viewers attached now
+}
+
+message StepResult {
+  Observation observation = 1;
+  double reward = 2;
+  bool done = 3;
+}
+
+message EpisodeMetrics {
+  string metrics_json = 1;          // sim.Metrics of the whole episode
+}

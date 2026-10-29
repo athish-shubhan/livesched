@@ -1,0 +1,99 @@
+[seed 4] ep   0 shows    w11 return   -6912.9 cost    61456 stall 0.103%
+[seed 4] ep   1 matches  w11 return   -7131.9 cost    61749 stall 0.128%
+[seed 4] ep   2 auctions w11 return   -7820.6 cost    62965 stall 0.201%
+[seed 4] ep   3 shows    w12 return  -10391.8 cost    76361 stall 0.346%
+[seed 4] ep   4 matches  w12 return   -9474.9 cost    78521 stall 0.169%
+[seed 4] ep   5 auctions w12 return  -10329.5 cost    80325 stall 0.274%
+[seed 4] ep   6 shows    w14 return   -7595.4 cost    60658 stall 0.156%
+[seed 4] ep   7 matches  w14 return   -7651.8 cost    62217 stall 0.158%
+[seed 4] ep   8 auctions w14 return   -7383.8 cost    62071 stall 0.098%
+[seed 4] ep   9 shows    w11 return   -6426.8 cost    59404 stall 0.019%
+[seed 4] ep  10 matches  w11 return   -6697.1 cost    61836 stall 0.032%
+[seed 4] ep  11 auctions w11 return   -7019.1 cost    63692 stall 0.057%
+[seed 4] ep  12 shows    w12 return   -9185.2 cost    77540 stall 0.129%
+[seed 4] ep  13 matches  w12 return   -9313.2 cost    78782 stall 0.125%
+[seed 4] ep  14 auctions w12 return   -9416.1 cost    81075 stall 0.121%
+[seed 4] ep  15 shows    w14 return   -7304.1 cost    60181 stall 0.128%
+[seed 4] ep  16 matches  w14 return   -7301.6 cost    61807 stall 0.097%
+[seed 4] ep  17 auctions w14 return   -7411.2 cost    62515 stall 0.099%
+[seed 4] ep  18 shows    w11 return   -6419.5 cost    61121 stall 0.022%
+[seed 4] ep  19 matches  w11 return   -6563.5 cost    61455 stall 0.021%
+[seed 4] ep  20 auctions w11 return   -6766.1 cost    63075 stall 0.008%
+[seed 4] ep  21 shows    w12 return   -8888.5 cost    76766 stall 0.099%
+[seed 4] ep  22 matches  w12 return   -9227.9 cost    78240 stall 0.136%
+[seed 4] ep  23 auctions w12 return   -9423.6 cost    80464 stall 0.126%
+[seed 4] ep  24 shows    w14 return   -7102.3 cost    60482 stall 0.089%
+[seed 4] ep  25 matches  w14 return   -7278.9 cost    61577 stall 0.101%
+[seed 4] ep  26 auctions w14 return   -7180.7 cost    62730 stall 0.066%
+[seed 4] ep  27 shows    w11 return   -6317.3 cost    60925 stall 0.005%
+[seed 4] ep  28 matches  w11 return   -6453.9 cost    60912 stall 0.014%
+[seed 4] ep  29 auctions w11 return   -6792.1 cost    63050 stall 0.013%
+[seed 4] ep  30 shows    w12 return   -8785.4 cost    76628 stall 0.084%
+[seed 4] ep  31 matches  w12 return   -8967.1 cost    77112 stall 0.098%
+[seed 4] ep  32 auctions w12 return   -9160.5 cost    78969 stall 0.097%
+[seed 4] ep  33 shows    w14 return   -6938.0 cost    59795 stall 0.069%
+[seed 4] ep  34 matches  w14 return   -7412.2 cost    62181 stall 0.119%
+[seed 4] ep  35 auctions w14 return   -7378.8 cost    61664 stall 0.105%
+[seed 4] ep  36 shows    w11 return   -6311.5 cost    60689 stall 0.007%
+[seed 4] ep  37 matches  w11 return   -6447.7 cost    63475 stall 0.007%
+[seed 4] ep  38 auctions w11 return   -6703.0 cost    62633 stall 0.003%
+[seed 4] ep  39 shows    w12 return   -8750.1 cost    77234 stall 0.077%
+[seed 4] ep  40 matches  w12 return   -8903.4 cost    77571 stall 0.092%
+[seed 4] ep  41 auctions w12 return   -9121.7 cost    79504 stall 0.087%
+[seed 4] ep  42 shows    w14 return   -6672.0 cost    60541 stall 0.022%
+[seed 4] ep  43 matches  w14 return   -6966.4 cost    61235 stall 0.052%
+[seed 4] ep  44 auctions w14 return   -7024.4 cost    61929 stall 0.040%
+[seed 4] ep  45 shows    w11 return   -6268.2 cost    58398 stall 0.008%
+[seed 4] ep  46 matches  w11 return   -6576.4 cost    59775 stall 0.046%
+[seed 4] ep  47 auctions w11 return   -6870.7 cost    62200 stall 0.044%
+[seed 4] ep  48 shows    w12 return   -8536.0 cost    74999 stall 0.053%
+[seed 4] ep  49 matches  w12 return   -8796.8 cost    76613 stall 0.069%
+[seed 4] ep  50 auctions w12 return   -8883.9 cost    79334 stall 0.053%
+[seed 4] ep  51 shows    w14 return   -6701.7 cost    59749 stall 0.033%
+[seed 4] ep  52 matches  w14 return   -6826.6 cost    60863 stall 0.029%
+[seed 4] ep  53 auctions w14 return   -6894.2 cost    61515 stall 0.020%
+[seed 4] ep  54 shows    w11 return   -6309.7 cost    57394 stall 0.022%
+[seed 4] ep  55 matches  w11 return   -6399.8 cost    62824 stall 0.007%
+[seed 4] ep  56 auctions w11 return   -6690.8 cost    61716 stall 0.018%
+[seed 4] ep  57 shows    w12 return   -9048.3 cost    75815 stall 0.128%
+[seed 4] ep  58 matches  w12 return   -8656.2 cost    75963 stall 0.049%
+[seed 4] ep  59 auctions w12 return   -8760.0 cost    77476 stall 0.038%
+[seed 4] ep  60 shows    w14 return   -6774.8 cost    59265 stall 0.043%
+[seed 4] ep  61 matches  w14 return   -6882.4 cost    60818 stall 0.035%
+[seed 4] ep  62 auctions w14 return   -6929.9 cost    61652 stall 0.023%
+[seed 4] ep  63 shows    w11 return   -6171.7 cost    56563 stall 0.001%
+[seed 4] ep  64 matches  w11 return   -6377.7 cost    57941 stall 0.013%
+[seed 4] ep  65 auctions w11 return   -6731.9 cost    60876 stall 0.028%
+[seed 4] ep  66 shows    w12 return   -8567.2 cost    76103 stall 0.048%
+[seed 4] ep  67 matches  w12 return   -8596.6 cost    76047 stall 0.049%
+[seed 4] ep  68 auctions w12 return   -8847.3 cost    78090 stall 0.050%
+[seed 4] ep  69 shows    w14 return   -6720.5 cost    59302 stall 0.036%
+[seed 4] ep  70 matches  w14 return   -6675.9 cost    60555 stall 0.005%
+[seed 4] ep  71 auctions w14 return   -6822.8 cost    60963 stall 0.011%
+[seed 4] ep  72 shows    w11 return   -6185.7 cost    55283 stall 0.011%
+[seed 4] ep  73 matches  w11 return   -6291.9 cost    57063 stall 0.004%
+[seed 4] ep  74 auctions w11 return   -6536.8 cost    59186 stall 0.001%
+[seed 4] ep  75 shows    w12 return   -8342.5 cost    73976 stall 0.021%
+[seed 4] ep  76 matches  w12 return   -8411.5 cost    74637 stall 0.025%
+[seed 4] ep  77 auctions w12 return   -8558.0 cost    75944 stall 0.011%
+[seed 4] ep  78 shows    w14 return   -6527.6 cost    59089 stall 0.005%
+[seed 4] ep  79 matches  w14 return   -6768.9 cost    60686 stall 0.019%
+[seed 4] ep  80 auctions w14 return   -6794.5 cost    60837 stall 0.010%
+[seed 4] ep  81 shows    w11 return   -6133.3 cost    55609 stall 0.001%
+[seed 4] ep  82 matches  w11 return   -6374.9 cost    56744 stall 0.021%
+[seed 4] ep  83 auctions w11 return   -6552.2 cost    58766 stall 0.002%
+[seed 4] ep  84 shows    w12 return   -8267.7 cost    74222 stall 0.014%
+[seed 4] ep  85 matches  w12 return   -8399.5 cost    74901 stall 0.021%
+[seed 4] ep  86 auctions w12 return   -8585.7 cost    76391 stall 0.013%
+[seed 4] ep  87 shows    w14 return   -6611.2 cost    59248 stall 0.016%
+[seed 4] ep  88 matches  w14 return   -6761.7 cost    60750 stall 0.017%
+[seed 4] ep  89 auctions w14 return   -6744.8 cost    60936 stall 0.002%
+[seed 4] test shows    w21 cost    78167 stall 2.365% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test matches  w21 cost    78960 stall 2.674% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test auctions w21 cost    80194 stall 2.408% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test shows    w22 cost    67919 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test matches  w22 cost    69872 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test auctions w22 cost    69993 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test shows    w23 cost    68358 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test matches  w23 cost    71417 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[seed 4] test auctions w23 cost    70708 stall 0.000% actions [143, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

@@ -1,0 +1,131 @@
+{
+  "budget": 80,
+  "first_beats_reference": {
+    "cost_change_pct": -1.5029917777721669,
+    "elapsed_sec": 21.989786031,
+    "simulations": 21,
+    "trial": 7
+  },
+  "first_cheaper_within_slo": {
+    "cost_change_pct": -1.5029917777721669,
+    "elapsed_sec": 21.989786031,
+    "simulations": 21,
+    "trial": 7
+  },
+  "proposer": "mutate",
+  "seed": 4,
+  "stall_slo": 0.001,
+  "test": {
+    "auctions": {
+      "cost_change_pct": -4.503624683302975,
+      "reference": {
+        "cost": 76661.7322053591,
+        "stall_ratio": 0.006889211378866981,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0.9384825084549285,
+        "feasible": false,
+        "objective": 4599099.361700436
+      },
+      "winner": {
+        "cost": 73209.17551111092,
+        "stall_ratio": 0.009794663789602951,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0.9178662103755388,
+        "feasible": false,
+        "objective": 6519030.942404765
+      }
+    },
+    "matches": {
+      "cost_change_pct": -4.540404439434997,
+      "reference": {
+        "cost": 76062.1707554905,
+        "stall_ratio": 0.007758231514613277,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0,
+        "feasible": false,
+        "objective": 5224125.9825275615
+      },
+      "winner": {
+        "cost": 72608.64057777758,
+        "stall_ratio": 0.010576646255571255,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0,
+        "feasible": false,
+        "objective": 7033342.163748483
+      }
+    },
+    "shows": {
+      "cost_change_pct": -4.963761483978946,
+      "reference": {
+        "cost": 74723.77191452832,
+        "stall_ratio": 0.006560886622343154,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0,
+        "feasible": false,
+        "objective": 4237500.385211197
+      },
+      "winner": {
+        "cost": 71014.66210485868,
+        "stall_ratio": 0.009446923336805276,
+        "startup_p95_ms": 240,
+        "auction_cohort_g2g_within_bound": 0,
+        "feasible": false,
+        "objective": 6076670.194204066
+      }
+    }
+  },
+  "train_ref": {
+    "cost": 64395.342084283126,
+    "stall_ratio": 0.0024140468987254634,
+    "startup_p95_ms": 240,
+    "auction_cohort_g2g_within_bound": 0,
+    "feasible": false,
+    "objective": 981415.2139591702
+  },
+  "val_ref": {
+    "cost": 82053.29363718792,
+    "stall_ratio": 0.0048205073720176935,
+    "startup_p95_ms": 240,
+    "auction_cohort_g2g_within_bound": 0,
+    "feasible": false,
+    "objective": 3225110.755392996
+  },
+  "wall_sec": 263.280389019,
+  "winner": {
+    "n": 77,
+    "candidate": {
+      "params": {
+        "frozen": false,
+        "cold": true,
+        "hot": false,
+        "offload": true,
+        "proactive": true,
+        "frozen_max": 3,
+        "cold_max": 17,
+        "hot_util": 0.7966647926013065,
+        "offload_util": 0.3,
+        "max_util": 0.99,
+        "protect_lowlat": true,
+        "be_max_util": 0.6426197918730979
+      }
+    },
+    "rationale": "mutation of a top-6 parent",
+    "train": {
+      "cost": 61334.643697161984,
+      "stall_ratio": 0.00016338782181663422,
+      "startup_p95_ms": 240,
+      "auction_cohort_g2g_within_bound": 0,
+      "feasible": true,
+      "objective": 61334.643697161984
+    },
+    "val": {
+      "cost": 77666.96313333325,
+      "stall_ratio": 0.00016559026378035785,
+      "startup_p95_ms": 240,
+      "auction_cohort_g2g_within_bound": 0,
+      "feasible": true,
+      "objective": 77666.96313333325
+    },
+    "elapsed_sec": 238.525521743
+  }
+}
