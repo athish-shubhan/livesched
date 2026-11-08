@@ -189,7 +189,7 @@ ByteDance's data (which is not public). Each is a test in
   result (every bidder past 2.0 s) follows from the assumed 0.3 s reassembly
   cost.
 
-## 8. Interview defence notes
+## 8. Design notes
 
 - *Why flow level?* The decision is per viewer join and the costs are
   per-node bandwidth; packet-level detail would cost 1000x the runtime and

@@ -18,7 +18,7 @@ traces. Model and limits: [`docs/DESIGN.md`](docs/DESIGN.md). All tables:
 
 ![cost by strategy](results/cost_by_strategy.png)
 
-**Baselines** (5 synthetic weeks of 12 hours, ~1M sessions each, 95% CIs):
+**Baselines** (5 synthetic weeks of 12 hours, ~1M sessions each, 95% CIs over weeks; one simulator seed family, no real traces):
 
 | | cost vs static nearest-edge | midgress / egress | stall ratio |
 |---|---|---|---|
@@ -137,13 +137,13 @@ CPU-minute.
 CPU and memory limits and a per-call timeout. The test candidate
 `strategies/examples/misbehaving.py` tries to open a socket (fails: network
 unreachable) and then hangs; it is cut off and the run degrades to the
-default edge instead of hanging the search.
+default edge instead of hanging the search. The sandbox needs Linux (`prlimit`, `unshare`; pass `-sandbox=false` elsewhere) and limits network, CPU and memory only: the candidate can still read files, so it is for containing buggy candidates, not a security boundary against hostile code.
 
 ## Quick start
 
 ```bash
 go build -o bin/livesched ./cmd/livesched
-go test ./...
+go test -race ./...
 
 ./bin/livesched run -strategy hcdn -scenario matches            # one simulation
 ./bin/livesched run -strategy hcdn -substreams 3                 # with naive substreams
@@ -179,7 +179,7 @@ env/             gRPC environment: proto, Go server, generated Python client
 python/          rl_baseline.py (REINFORCE), lpbound.py (SciPy HiGHS), plot.py
 cmd/livesched/   run, sweep, grid, search, serve, demand, sample
 results/         SUMMARY.md, figures, raw JSON lines
-docs/DESIGN.md   model, strategies, checks against the papers, validity threats, interview notes
+docs/DESIGN.md   model, strategies, checks against the papers, validity threats, design notes
 ```
 
 ## What is not here
@@ -193,32 +193,3 @@ docs/DESIGN.md   model, strategies, checks against the papers, validity threats,
 - A search split with an overload week in training or validation (see the
   robustness finding above).
 - NetAssistant-style incident diagnosis (stretch).
-
-## Resume bullets (simulation results; keep the word "simulated")
-
-- Built LiveSched, a trace-driven live-CDN simulator in Go (gRPC environment,
-  Python client) that re-implements ByteDance's HCDN redirection strategies and
-  Medley substreams (NSDI '26) across shows, LIVE Matches and countdown
-  auctions, replaying 32M simulated viewer sessions per CPU-minute.
-- Built a simulator-verified strategy search (train, validation and held-out
-  weeks; sandboxed policy-as-code; pluggable model interface) whose winners cut
-  simulated bandwidth cost 4.4-4.8% against re-implemented HCDN defaults on
-  held-out weeks (mean of 5 search seeds; the seed-1 winner at 134% of an LP
-  lower bound), and caught through per-week testing that 4 of 5 winners
-  stalled 43-52% more than HCDN in an overloaded week; a REINFORCE baseline over the same environment did not
-  beat HCDN (+0.1% to +0.7%).
-- Modelled LIVE shows, LIVE Matches and auction scenarios with separate QoE
-  objectives; scenario-aware scheduling cut the auction cohort's simulated p99
-  glass-to-glass latency from 18.8 s to 1.8 s (100% of viewing time within the
-  2.0 s bound, vs 98.3%) for 0.2 points of cost.
-- Reproduced the papers' directional findings (substream cache misses
-  amplify internal traffic; aggregation cuts midgress/egress from 0.18 to
-  0.08) and showed HCDN's best-effort offload trades stalls for cost: capping
-  best-effort links at their guaranteed floor kept the saving (-9.2% vs
-  static) with zero simulated stalls.
-
-## Interview defence
-
-`docs/DESIGN.md` section 8: why flow-level, how the simulator was checked
-without ByteDance data, how the search is kept from overfitting (and where it
-still did), why HTTP redirection, and why the RL baseline lost.

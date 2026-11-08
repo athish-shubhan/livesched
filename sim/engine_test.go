@@ -4,6 +4,7 @@ import (
 	"math"
 	"path/filepath"
 	"testing"
+	"time"
 
 	"livesched/sim"
 	"livesched/strategies"
@@ -135,5 +136,24 @@ func TestTwitchLoader(t *testing.T) {
 	e := sim.New(sim.DefaultTopo(), sim.DefaultQoE(), sim.Transport{Substreams: 1}, w, 1)
 	if m := e.Run(strategies.HCDN{P: strategies.DefaultHCDN()}, w); m.Sessions != int64(n) {
 		t.Fatalf("simulated %d sessions, loaded %d", m.Sessions, n)
+	}
+}
+
+// A candidate that never answers is cut off by the timeout and the run
+// completes on the default edge instead of hanging.
+func TestExternalTimeoutFallsBack(t *testing.T) {
+	x, err := strategies.NewExternal("hang", []string{"sh", "-c", "sleep 30"})
+	if err != nil {
+		t.Skipf("cannot start helper process: %v", err)
+	}
+	x.Timeout = 50 * time.Millisecond
+	w := small(5, workload.Shows)
+	e := sim.New(sim.DefaultTopo(), sim.DefaultQoE(), sim.Transport{Substreams: 1}, w, 7)
+	m := e.Run(x, w)
+	if why := x.Close(); why != "timeout" {
+		t.Fatalf("expected the candidate to be disabled by timeout, got %q", why)
+	}
+	if m.Sessions == 0 || x.Fallback == 0 {
+		t.Fatalf("sessions=%d fallbacks=%d", m.Sessions, x.Fallback)
 	}
 }
