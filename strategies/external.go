@@ -161,7 +161,9 @@ func (x *External) fail(why string) {
 // Close stops the process and reports why it failed, if it did.
 func (x *External) Close() string {
 	if x.cmd.Process != nil {
-		x.in.Flush()
+		// Do not touch x.in here: after a timeout the request goroutine may
+		// still be using it. Closing the pipe and killing the process
+		// unblocks that goroutine.
 		x.stdin.Close()
 		x.cmd.Process.Kill()
 		x.cmd.Wait()
